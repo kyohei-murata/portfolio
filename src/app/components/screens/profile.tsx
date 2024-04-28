@@ -25,6 +25,7 @@ export const Profile = (): JSX.Element => {
             variant="body1"
             align="center"
             color={ColorAssets.textBlack}
+            id={'profile'}
           >
             私のこれまでの人生をまとめてみました
           </Typography>

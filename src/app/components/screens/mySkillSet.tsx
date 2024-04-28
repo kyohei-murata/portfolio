@@ -22,6 +22,7 @@ export const MySkillSet = (): JSX.Element => {
           variant="h3"
           color={ColorAssets.textBlack}
           fontWeight={'Bold'}
+          id={'my-skills'}
         >
           My Skill Sets
         </Typography>

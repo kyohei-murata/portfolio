@@ -1,7 +1,7 @@
 'use client';
 import { useColorAssets } from '@/hooks/view/useColorAssets';
-import ArrowDropDownCircleIcon from '@mui/icons-material/ArrowDropDownCircle';
 import { Box, IconButton, Typography } from '@mui/material';
+import Image from 'next/image';
 import { useRef, useState } from 'react';
 import { Controller } from '../ui-kits/controller';
 import '/Users/muratakyohei/NextPractice/myportfolio/src/app/globals.css';
@@ -68,8 +68,11 @@ export const TopPage = (): JSX.Element => {
           },
         }}
       >
-        <ArrowDropDownCircleIcon
-          sx={{ fontSize: '80px', color: '#D9D9D9' }}
+        <Image
+          src={'/dropDown.svg'}
+          alt="arrow-down"
+          width={80}
+          height={80}
           className="moveUpDown"
         />
       </IconButton>

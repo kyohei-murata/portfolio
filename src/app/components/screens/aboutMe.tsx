@@ -44,6 +44,7 @@ export const AboutMe = (): JSX.Element => {
             align="center"
             style={{ lineHeight: '2.5' }}
             color={ColorAssets.textBlack}
+            id={'about-me'}
           >
             埼玉県出身のエンジニア。高校では情報通信に入り
             <br />

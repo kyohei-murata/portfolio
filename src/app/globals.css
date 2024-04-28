@@ -12,9 +12,39 @@ body {
   background-size: 20px 20px; /* ラジアルグラデーションのサイズ */
   background-position: 0 0, 150px 150px;
   background-attachment: fixed;
-  height: 500vh;
+  height: 800vh;
   justify-content: center;
   align-items: center;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-from-right {
+  animation: slideInFromRight 0.5s ease-in-out;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+.slide-in-from-left {
+  animation: slideInFromLeft0.5s ease-in-out;
 }
 
 .controllerImage {
