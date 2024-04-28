@@ -1,19 +1,24 @@
-import Image from "next/image";
-import localImage from "../../public/dotBackground.jpg";
-import { Button, Stack, TextField, Typography, Box } from "@mui/material";
-import { Header } from "./components/header";
-import { useColorAssets } from "@/hooks/view/useColorAssets";
+import { useColorAssets } from '@/hooks/view/useColorAssets';
+import { Header } from './components/header/header';
+import { AboutMe } from './components/screens/aboutMe';
+import { AboutThisSite } from './components/screens/aboutThisSite';
+import { MySkillSet } from './components/screens/mySkillSet';
+import { Profile } from './components/screens/profile';
+import { TopPage } from './components/screens/topPage';
+import { Works } from './components/screens/works';
 
 export default function Home() {
-const ColorAssets = useColorAssets();
+  const ColorAssets = useColorAssets();
+
   return (
-    <Box display={"flex"} 
-          bgcolor={ColorAssets.mainGreen} 
-          minHeight={"100vh"} 
-          padding={"0px"}
-    >
-      
-        <Typography color={ColorAssets.textWhite}>{"kyohei's"}</Typography>
-    </Box>
+    <div className="dotBackground">
+      <Header />
+      <TopPage />
+      <AboutThisSite />
+      <AboutMe />
+      <Works />
+      <MySkillSet />
+      <Profile />
+    </div>
   );
 }
