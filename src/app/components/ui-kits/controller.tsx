@@ -58,7 +58,9 @@ export const Controller = ({
       >
         <RgbButton
           buttonColor="green"
-          // onClick={setBackgroundColor(ColorAssets.buttonGreen)}
+          onClick={() => {
+            handleClick(ColorAssets.mainGreen);
+          }}
         />
       </Box>
       <Box
@@ -71,7 +73,9 @@ export const Controller = ({
         <RgbButton
           buttonColor="green"
           isAnimation
-          // onClick={setBackgroundColor(ColorAssets.buttonGreen)}
+          onClick={() => {
+            handleClick(ColorAssets.mainGreen);
+          }}
         />
       </Box>
       <Box
@@ -83,7 +87,9 @@ export const Controller = ({
       >
         <RgbButton
           buttonColor="blue"
-          // onClick={setBackgroundColor(ColorAssets.buttonBlue)}
+          onClick={() => {
+            handleClick(ColorAssets.buttonBlue);
+          }}
         />
       </Box>
       <Box
@@ -96,7 +102,9 @@ export const Controller = ({
         <RgbButton
           buttonColor="blue"
           isAnimation
-          // onClick={setBackgroundColor(ColorAssets.buttonBlue)}
+          onClick={() => {
+            handleClick(ColorAssets.mainBlue);
+          }}
         />
       </Box>
     </Box>

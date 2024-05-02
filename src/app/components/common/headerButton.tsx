@@ -8,20 +8,11 @@ type Props = {
 };
 
 export const HeaderButton = (props: Props): JSX.Element => {
-  const topOffset = 50;
+  const topOffset = 100;
   const ColorAssets = useColorAssets();
   const scrollTopPage = () => {
     const topPageY =
       document.querySelector('#top-page')?.getBoundingClientRect().top ?? 0;
-    window.scrollTo({
-      top: window.pageYOffset + topPageY - window.innerHeight / 2 + topOffset,
-      behavior: 'smooth',
-    });
-  };
-  const scrollAboutThisSite = () => {
-    const topPageY =
-      document.querySelector('#about-this-site')?.getBoundingClientRect().top ??
-      0;
     window.scrollTo({
       top: window.pageYOffset + topPageY - window.innerHeight / 2 + topOffset,
       behavior: 'smooth',
@@ -35,17 +26,17 @@ export const HeaderButton = (props: Props): JSX.Element => {
       behavior: 'smooth',
     });
   };
-  const scrollMySkills = () => {
-    const topPageY =
-      document.querySelector('#my-skills')?.getBoundingClientRect().top ?? 0;
-    window.scrollTo({
-      top: window.pageYOffset + topPageY - window.innerHeight / 2 + topOffset,
-      behavior: 'smooth',
-    });
-  };
   const scrollProfile = () => {
     const topPageY =
       document.querySelector('#profile')?.getBoundingClientRect().top ?? 0;
+    window.scrollTo({
+      top: window.pageYOffset + topPageY - window.innerHeight / 2 + 200,
+      behavior: 'smooth',
+    });
+  };
+  const scrollContactMe = () => {
+    const topPageY =
+      document.querySelector('#contact-me')?.getBoundingClientRect().top ?? 0;
     window.scrollTo({
       top: window.pageYOffset + topPageY - window.innerHeight / 2 + 200,
       behavior: 'smooth',
@@ -57,13 +48,13 @@ export const HeaderButton = (props: Props): JSX.Element => {
       onClick={
         props.scrollTarget === 'topPage'
           ? scrollTopPage
-          : props.scrollTarget === 'aboutThisSite'
-          ? scrollAboutThisSite
           : props.scrollTarget === 'aboutMe'
           ? scrollAboutMe
-          : props.scrollTarget === 'mySkills'
-          ? scrollMySkills
-          : scrollProfile
+          : props.scrollTarget === 'profile'
+          ? scrollProfile
+          : props.scrollTarget === 'contactMe'
+          ? scrollContactMe
+          : scrollTopPage
       }
     >
       <Typography fontSize={14} color={ColorAssets.textBlack}>

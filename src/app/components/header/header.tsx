@@ -23,9 +23,9 @@ export const Header = (): JSX.Element => {
       </Box>
       <Box display={'flex'} pr={'140px'}>
         <HeaderButton scrollTarget="topPage" text="トップページ" />
-        <HeaderButton scrollTarget="aboutThisSite" text="このサイトについて" />
         <HeaderButton scrollTarget="aboutMe" text="私について" />
         <HeaderButton scrollTarget="profile" text="経歴" />
+        <HeaderButton scrollTarget="contactMe" text="contact me" />
       </Box>
     </Box>
   );

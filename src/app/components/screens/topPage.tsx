@@ -2,21 +2,22 @@
 import { useColorAssets } from '@/hooks/view/useColorAssets';
 import { Box, IconButton, Typography } from '@mui/material';
 import Image from 'next/image';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { Controller } from '../ui-kits/controller';
 import '/Users/muratakyohei/NextPractice/myportfolio/src/app/globals.css';
 
-type Color = string;
-export const TopPage = (): JSX.Element => {
+type HandleClick = (color: string) => void;
+
+type Props = {
+  backgroundColor: string;
+  handleClick: (color: string) => void;
+};
+
+export const TopPage = (props: Props): JSX.Element => {
   const ColorAssets = useColorAssets();
   const aboutThisSiteRef = useRef<HTMLDivElement>(null);
   const topOffset = 50;
-  const [backgroundColor, setBackgroundColor] = useState<string>(
-    ColorAssets.mainGreen
-  );
-  const handleClick = (Color: string) => {
-    setBackgroundColor(Color);
-  };
+
   const scrollAboutThisSite = () => {
     // AboutThisSiteコンポーネントの上端からのY座標を取得
     const aboutThisSiteY =
@@ -32,17 +33,19 @@ export const TopPage = (): JSX.Element => {
       behavior: 'smooth',
     });
   };
-
   return (
     <Box
-      bgcolor={backgroundColor}
+      bgcolor={props.backgroundColor}
       minHeight={'100vh'}
       py={4}
       display={'flex'}
       flexDirection={'column'}
       alignItems={'center'}
       justifyContent={'center'}
-      sx={{ '& > :not(style) + :not(style)': { marginTop: '4px' } }}
+      sx={{
+        '& > :not(style) + :not(style)': { marginTop: '4px' },
+        transition: 'background-color 0.5s ease',
+      }}
       id={'top-page'}
     >
       <Typography
@@ -52,12 +55,12 @@ export const TopPage = (): JSX.Element => {
         py={2}
         fontWeight={'Bold'}
       >
-        {"kyon's lab!"}
+        {"kyon's Lab!"}
       </Typography>
       <Typography variant="h5" align="center" color={ColorAssets.textWhite}>
-        KYON Engineering Laboratory
+        kyon Engineering Laboratory
       </Typography>
-      <Controller handleClick={handleClick} />
+      <Controller handleClick={props.handleClick} />
       <IconButton
         onClick={scrollAboutThisSite}
         sx={{

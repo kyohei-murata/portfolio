@@ -106,8 +106,12 @@ const pulseAnimation = keyframes`
 
 export const RgbButton = (props: Props): JSX.Element => {
   const ColorAssets = useColorAssets();
+
   return (
-    <Button sx={buttonStyle(props.buttonColor, ColorAssets, props.isAnimation)}>
+    <Button
+      sx={buttonStyle(props.buttonColor, ColorAssets, props.isAnimation)}
+      onClick={props.onClick}
+    >
       {props.buttonColor === 'red'
         ? 'R'
         : props.buttonColor === 'green'

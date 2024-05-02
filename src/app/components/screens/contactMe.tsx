@@ -1,44 +1,48 @@
 import { useColorAssets } from '@/hooks/view/useColorAssets';
 import { Box, Stack, Typography } from '@mui/material';
+import ContactForm from '../ui-kits/contactForm';
 import '/Users/muratakyohei/NextPractice/myportfolio/src/app/globals.css';
 
-export const AboutThisSite = (): JSX.Element => {
+export const ContactMe = ({
+  backgroundColor,
+}: {
+  backgroundColor: string;
+}): JSX.Element => {
   const ColorAssets = useColorAssets();
   return (
     <Box
       minHeight={'100vh'}
       display={'flex'}
-      alignItems={'center'}
       justifyContent={'center'}
+      bgcolor={'#f8f8f8'}
     >
       <Stack
         display={'flex'}
         alignItems={'center'}
         justifyContent={'center'}
-        spacing={6}
+        spacing={4}
       >
         <Typography
           variant="h3"
           color={ColorAssets.textBlack}
           fontWeight={'Bold'}
         >
-          About This Site
+          Contact me
         </Typography>
         <Typography
           variant="body1"
           align="center"
           style={{ lineHeight: '3.0' }}
           color={ColorAssets.textBlack}
-          id="about-this-site"
+          maxWidth={'620px'}
+          id="contact-me"
+          textAlign={'left'}
         >
-          ここはマーケター兼エンジニアKyonのポートフォリオサイトです
-          <br />
-          これまでに手がけた制作物、身につけたスキルをまとめています。
-          <br />
-          今はまだ少ないですが、これからどんどん増やせるよう頑張ります。
-          <br />
-          どうぞお茶でも飲みながらごゆるりとサイト内を散策してください。
+          最後までご覧いただきありがとうございます。 <br />
+          このサイトを通じて、 少しでも私のことを知っていただければ幸いです。
+          もしあればコメントや質問等、なんでもお気軽にご連絡ください
         </Typography>
+        <ContactForm backgroundColor={backgroundColor} />
       </Stack>
     </Box>
   );

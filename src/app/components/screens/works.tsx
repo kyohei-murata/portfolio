@@ -1,22 +1,26 @@
+'use client';
 import { useColorAssets } from '@/hooks/view/useColorAssets';
 import {
   Box,
-  ImageList,
-  ImageListItem,
-  ImageListItemBar,
+  Card,
+  CardActionArea,
+  CardContent,
+  CardMedia,
   Stack,
   Typography,
 } from '@mui/material';
-import Image from 'next/image';
 import '/Users/muratakyohei/NextPractice/myportfolio/src/app/globals.css';
 
 export const Works = (): JSX.Element => {
+  const scrollTopPage = () => {
+    const topPageY =
+      document.querySelector('#top-page')?.getBoundingClientRect().top ?? 0;
+    window.scrollTo({
+      top: window.pageYOffset + topPageY - window.innerHeight / 2,
+      behavior: 'smooth',
+    });
+  };
   const ColorAssets = useColorAssets();
-  const images = [
-    { url: '/entech_2.png', title: 'entech' },
-    { url: '/kyonLab.png', title: "kyon's lab" },
-    { url: '/ComingSoon.png', title: 'coming soon...' },
-  ];
   return (
     <Box
       minHeight={'100vh'}
@@ -37,6 +41,65 @@ export const Works = (): JSX.Element => {
         >
           Works
         </Typography>
+        <Stack direction={'row'} spacing={'20px'}>
+          <Card sx={{ maxWidth: 300 }}>
+            <CardActionArea>
+              <CardMedia
+                component="img"
+                height="140"
+                image="/entech.png"
+                alt="entech"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  entech
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  何かを作りたい学生たちが仲間を募る　　サービスのデモです。
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+
+          <Card sx={{ maxWidth: 300 }} onClick={scrollTopPage}>
+            <CardActionArea>
+              <CardMedia
+                component="img"
+                height="140"
+                image="/kyonLab.png"
+                alt="kyonLab"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  kyon's Lab
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  エンジニア、マーケターである私の　　　ポートフォリオサイトです。
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+
+          <Card sx={{ maxWidth: 300 }}>
+            <CardActionArea>
+              <CardMedia
+                component="img"
+                height="140"
+                image="/ComingSoon.png"
+                alt="comingsoon"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  Coming Soon..
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  今後の作品をお楽しみに！　　　　　　　　　　　
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </Stack>
+        {/* 
         <ImageList cols={3} rowHeight={200} gap={40}>
           {images.map((item) => (
             <ImageListItem key={item.url}>
@@ -67,7 +130,7 @@ export const Works = (): JSX.Element => {
               />
             </ImageListItem>
           ))}
-        </ImageList>
+        </ImageList> */}
       </Stack>
     </Box>
   );

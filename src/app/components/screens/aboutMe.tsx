@@ -1,5 +1,5 @@
 import { useColorAssets } from '@/hooks/view/useColorAssets';
-import { Box, Stack, Typography } from '@mui/material';
+import { Box, Link, Stack, Typography } from '@mui/material';
 import Image from 'next/image';
 import '/Users/muratakyohei/NextPractice/myportfolio/src/app/globals.css';
 
@@ -31,13 +31,14 @@ export const AboutMe = (): JSX.Element => {
           display={'flex'}
           alignItems={'center'}
           justifyContent={'center'}
-          spacing={4}
+          spacing={8}
         >
           <Image
+            style={{ paddingBottom: '24px' }}
             src={'/IMG_2997.JPG'}
             alt="About Me"
-            width={150}
-            height={150}
+            width={160}
+            height={160}
           />
           <Typography
             variant="body1"
@@ -45,18 +46,21 @@ export const AboutMe = (): JSX.Element => {
             style={{ lineHeight: '2.5' }}
             color={ColorAssets.textBlack}
             id={'about-me'}
+            maxWidth={'360px'}
+            textAlign={'left'}
           >
-            埼玉県出身のエンジニア。高校では情報通信に入り
+            埼玉県出身のマーケター、エンジニアもどき。　　　高校では情報通信科、大学では情報学科に入学し
             <br />
-            主にC言語と、情報配線施行についてを学び新潟の
+            情報学 について広く浅く学んだ。
             <br />
-            開志専門職大学で広く浅く情報学部ついて学んだ。
-            <br />
-            エンジニアとしてはNext.jsを使ったReact,Typescript
-            <br />
-            の開発を1年ほど経験する。1年間スタートアップ企業で
-            <br />
-            マーケティングを担当し、SNS運営を行った。
+            マーケターとしては1年間スタートアップでTikTokの運用を行い、エンジニアとしてはReact,Typescriptの
+            開発を1年ほど独学で学び、　　学校ではPython,Cを触ってきた。
+            <Typography fontSize={16} pt={4}>
+              --Github:{' '}
+              <Link href="https://github.com/kyohei-murata">
+                https://github.com/kyohei-murata
+              </Link>
+            </Typography>
           </Typography>
         </Stack>
       </Stack>
