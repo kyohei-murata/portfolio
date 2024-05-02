@@ -1,6 +1,6 @@
 'use client';
 import { useColorAssets } from '@/hooks/view/useColorAssets';
-import { Box, IconButton, Typography } from '@mui/material';
+import { Box, IconButton, Typography, useTheme } from '@mui/material';
 import Image from 'next/image';
 import { useRef } from 'react';
 import { Controller } from '../ui-kits/controller';
@@ -14,6 +14,7 @@ type Props = {
 
 export const TopPage = (props: Props): JSX.Element => {
   const ColorAssets = useColorAssets();
+  const theme = useTheme();
   const aboutThisSiteRef = useRef<HTMLDivElement>(null);
   const topOffset = 50;
 

@@ -31,7 +31,7 @@ export const useTimeLineObserver = (ref: RefObject<Element>) => {
           }
         });
       },
-      { threshold: 0.6 }
+      { threshold: 0.2 }
     );
 
     const currentRef = ref.current;
