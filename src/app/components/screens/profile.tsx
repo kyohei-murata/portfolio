@@ -4,7 +4,6 @@ import { Timeline } from '@mui/lab';
 import { Box, Stack, Typography } from '@mui/material';
 import { useRef } from 'react';
 import { CustomizedTimeline } from '../ui-kits/timeLine';
-import '/Users/muratakyohei/NextPractice/myportfolio/src/app/globals.css';
 
 export const Profile = (): JSX.Element => {
   const ColorAssets = useColorAssets();

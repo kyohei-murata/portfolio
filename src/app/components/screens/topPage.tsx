@@ -4,7 +4,6 @@ import { Box, IconButton, Typography } from '@mui/material';
 import Image from 'next/image';
 import { useRef } from 'react';
 import { Controller } from '../ui-kits/controller';
-import '/Users/muratakyohei/NextPractice/myportfolio/src/app/globals.css';
 
 type HandleClick = (color: string) => void;
 

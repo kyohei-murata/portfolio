@@ -1,6 +1,5 @@
 import { useColorAssets } from '@/hooks/view/useColorAssets';
 import { Box, Stack, Typography } from '@mui/material';
-import '/Users/muratakyohei/NextPractice/myportfolio/src/app/globals.css';
 
 export const MySkillSet = (): JSX.Element => {
   const ColorAssets = useColorAssets();

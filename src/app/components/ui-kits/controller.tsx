@@ -2,7 +2,6 @@ import { useColorAssets } from '@/hooks/view/useColorAssets';
 import { Box } from '@mui/material';
 import Image from 'next/image';
 import { RgbButton } from '../common/rgbButton';
-import '/Users/muratakyohei/NextPractice/myportfolio/src/app/globals.css';
 
 type HandleClick = (color: string) => void;
 

@@ -1,7 +1,6 @@
 import { useColorAssets } from '@/hooks/view/useColorAssets';
 import { Box, IconButton, Stack, Typography } from '@mui/material';
 import Image from 'next/image';
-import '/Users/muratakyohei/NextPractice/myportfolio/src/app/globals.css';
 
 const scrollTopPage = () => {
   const aboutThisSiteY =

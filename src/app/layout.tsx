@@ -2,7 +2,6 @@
 import { ThemeProvider } from '@emotion/react';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import type { Metadata } from 'next';
-import './globals.css';
 import { theme } from './ui/font';
 
 const metadata: Metadata = {

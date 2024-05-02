@@ -1,7 +1,6 @@
 import { useColorAssets } from '@/hooks/view/useColorAssets';
 import { Box, Stack, Typography } from '@mui/material';
 import ContactForm from '../ui-kits/contactForm';
-import '/Users/muratakyohei/NextPractice/myportfolio/src/app/globals.css';
 
 export const ContactMe = ({
   backgroundColor,

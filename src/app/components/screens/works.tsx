@@ -9,7 +9,6 @@ import {
   Stack,
   Typography,
 } from '@mui/material';
-import '/Users/muratakyohei/NextPractice/myportfolio/src/app/globals.css';
 
 export const Works = (): JSX.Element => {
   const scrollTopPage = () => {
