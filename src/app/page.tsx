@@ -10,6 +10,7 @@ import { MySkillSet } from './components/screens/mySkillSet';
 import { Profile } from './components/screens/profile';
 import { TopPage } from './components/screens/topPage';
 import { Works } from './components/screens/works';
+//global.cssをインポートしたい
 
 export default function Home() {
   const ColorAssets = useColorAssets();
