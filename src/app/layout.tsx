@@ -2,8 +2,8 @@
 import { ThemeProvider } from '@emotion/react';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import type { Metadata } from 'next';
+import '../app/styles/globals.css';
 import { theme } from './ui/font';
-import '/Users/muratakyohei/NextPractice/myportfolio/src/app/globals.css';
 
 const metadata: Metadata = {
   title: 'Create Next App',
