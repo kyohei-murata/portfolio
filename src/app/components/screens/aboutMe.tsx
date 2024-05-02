@@ -55,12 +55,13 @@ export const AboutMe = (): JSX.Element => {
             <br />
             マーケターとしては1年間スタートアップでTikTokの運用を行い、エンジニアとしてはReact,Typescriptの
             開発を1年ほど独学で学び、　　学校ではPython,Cを触ってきた。
-            <Typography fontSize={16} pt={4}>
+            <br />
+            <span style={{ fontSize: '14px' }}>
               --Github:{' '}
               <Link href="https://github.com/kyohei-murata">
                 https://github.com/kyohei-murata
               </Link>
-            </Typography>
+            </span>
           </Typography>
         </Stack>
       </Stack>
