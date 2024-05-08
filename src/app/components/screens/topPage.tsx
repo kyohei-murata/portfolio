@@ -1,9 +1,16 @@
 'use client';
 import { useColorAssets } from '@/hooks/view/useColorAssets';
-import { Box, IconButton, Typography, useTheme } from '@mui/material';
+import {
+  Box,
+  IconButton,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
 import Image from 'next/image';
 import { useRef } from 'react';
 import { Controller } from '../ui-kits/controller';
+import { PopUpMenuButton } from '../ui-kits/popUpMenuButton';
 
 type HandleClick = (color: string) => void;
 
@@ -17,6 +24,7 @@ export const TopPage = (props: Props): JSX.Element => {
   const theme = useTheme();
   const aboutThisSiteRef = useRef<HTMLDivElement>(null);
   const topOffset = 50;
+  const matchesPlusMd = useMediaQuery(theme.breakpoints.up('plusMd'));
 
   const scrollAboutThisSite = () => {
     // AboutThisSiteコンポーネントの上端からのY座標を取得
@@ -36,12 +44,13 @@ export const TopPage = (props: Props): JSX.Element => {
   return (
     <Box
       bgcolor={props.backgroundColor}
-      minHeight={'100vh'}
-      py={4}
+      minHeight={useMediaQuery(theme.breakpoints.up('lg')) ? '100vh' : '92vh'}
+      py={theme.breakpoints.up('lg') ? '4' : '0'}
       display={'flex'}
       flexDirection={'column'}
       alignItems={'center'}
       justifyContent={'center'}
+      maxWidth={'100%'}
       sx={{
         '& > :not(style) + :not(style)': { marginTop: '4px' },
         transition: 'background-color 0.5s ease',
@@ -61,25 +70,28 @@ export const TopPage = (props: Props): JSX.Element => {
         kyon Engineering Laboratory
       </Typography>
       <Controller handleClick={props.handleClick} />
-      <IconButton
-        onClick={scrollAboutThisSite}
-        sx={{
-          // ホバー時のスタイルを直接指定し、ホバー時に何も起きないようにします
-          ':hover': {
-            backgroundColor: 'transparent',
-            // ホバー時のイベントを無効化するスタイルを適用
-          },
-        }}
-      >
-        <Image
-          src={'/dropDown.svg'}
-          alt="arrow-down"
-          width={80}
-          height={80}
-          className="moveUpDown"
-        />
-      </IconButton>
-      {/* AboutThisSiteコンポーネントまでスクロールするための参照 */}
+      {matchesPlusMd ? (
+        <IconButton
+          onClick={scrollAboutThisSite}
+          sx={{
+            // ホバー時のスタイルを直接指定し、ホバー時に何も起きないようにします
+            ':hover': {
+              backgroundColor: 'transparent',
+              // ホバー時のイベントを無効化するスタイルを適用
+            },
+          }}
+        >
+          <Image
+            src={'/dropDown.svg'}
+            alt="arrow-down"
+            width={80}
+            height={80}
+            className="moveUpDown"
+          />
+        </IconButton>
+      ) : (
+        <PopUpMenuButton backgroundColor={props.backgroundColor} />
+      )}
       <div ref={aboutThisSiteRef} />
     </Box>
   );

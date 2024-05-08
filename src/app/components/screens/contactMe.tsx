@@ -33,7 +33,8 @@ export const ContactMe = ({
           align="center"
           style={{ lineHeight: '3.0' }}
           color={ColorAssets.textBlack}
-          maxWidth={'620px'}
+          //maxWidth={'620px'}
+          maxWidth={'100%'}
           id="contact-me"
           textAlign={'left'}
         >

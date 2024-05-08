@@ -1,6 +1,5 @@
 // import nodemailer from 'nodemailer';
-// import express from 'express';
-// import { Request, Response } from 'express';
+
 // const app = express();
 
 // app.use(express.json());
