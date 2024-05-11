@@ -1,5 +1,6 @@
 import { useColorAssets } from '@/hooks/view/useColorAssets';
-import { Box, useMediaQuery, useTheme } from '@mui/material';
+import { useCustomBreakpoints } from '@/hooks/view/useCustomBreakpoints';
+import { Box, useTheme } from '@mui/material';
 import Image from 'next/image';
 import { useState } from 'react';
 import { HeaderButton } from '../common/headerButton';
@@ -7,8 +8,7 @@ import { HeaderButton } from '../common/headerButton';
 export const Header = (): JSX.Element => {
   const ColorAssets = useColorAssets();
   const theme = useTheme();
-  const matchesPlusMd = useMediaQuery(theme.breakpoints.up('plusMd'));
-
+  const CustomBreakpoints = useCustomBreakpoints();
   const logoAdjustment = 20;
   const [isOpen, setIsOpen] = useState(false);
   const handleDrawerOpen = () => {
@@ -22,16 +22,18 @@ export const Header = (): JSX.Element => {
     <Box
       sx={{
         display: 'flex',
-        minHeight: matchesPlusMd ? '8vh' : '4vh',
         minWidth: '100%',
-        position: matchesPlusMd ? 'fixed' : undefined,
         zIndex: '999',
-        backgroundColor: 'rgba(255,255,255,0.8)',
-        padding: matchesPlusMd ? '0px 40px' : '0px 00px',
-        justifyContent: matchesPlusMd ? 'space-between' : 'center', // 中央に常に配置
+        backgroundColor: 'rgba(255,255,255,0.6)',
+        position: 'fixed',
+        minHeight: CustomBreakpoints.matchesPlusMdUp ? '8vh' : '4vh',
+        padding: CustomBreakpoints.matchesPlusMdUp ? '0px 40px' : '0px 0px',
+        justifyContent: CustomBreakpoints.matchesPlusMdUp
+          ? 'space-between'
+          : 'center',
       }}
     >
-      {matchesPlusMd ? (
+      {CustomBreakpoints.matchesPlusMdUp ? (
         <>
           <Image src="/logo.png" alt="logo" width="60" height="60" />
           <Box display={'flex'} pr={'140px'}>

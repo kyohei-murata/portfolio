@@ -1,18 +1,11 @@
 'use client';
 import { useColorAssets } from '@/hooks/view/useColorAssets';
-import {
-  Box,
-  IconButton,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from '@mui/material';
+import { useCustomBreakpoints } from '@/hooks/view/useCustomBreakpoints';
+import { Box, IconButton, Typography } from '@mui/material';
 import Image from 'next/image';
 import { useRef } from 'react';
 import { Controller } from '../ui-kits/controller';
 import { PopUpMenuButton } from '../ui-kits/popUpMenuButton';
-
-type HandleClick = (color: string) => void;
 
 type Props = {
   backgroundColor: string;
@@ -21,31 +14,22 @@ type Props = {
 
 export const TopPage = (props: Props): JSX.Element => {
   const ColorAssets = useColorAssets();
-  const theme = useTheme();
+  const CustomBreakpoints = useCustomBreakpoints();
   const aboutThisSiteRef = useRef<HTMLDivElement>(null);
-  const topOffset = 50;
-  const matchesPlusMd = useMediaQuery(theme.breakpoints.up('plusMd'));
 
   const scrollAboutThisSite = () => {
-    // AboutThisSiteコンポーネントの上端からのY座標を取得
     const aboutThisSiteY =
       document.querySelector('#about-this-site')?.getBoundingClientRect().top ??
       0;
-    // ウィンドウのスクロール位置を設定
     window.scrollTo({
-      top:
-        window.pageYOffset +
-        aboutThisSiteY -
-        window.innerHeight / 2 +
-        topOffset,
+      top: window.pageYOffset + aboutThisSiteY - window.innerHeight / 2 + 50,
       behavior: 'smooth',
     });
   };
   return (
     <Box
       bgcolor={props.backgroundColor}
-      minHeight={useMediaQuery(theme.breakpoints.up('lg')) ? '100vh' : '92vh'}
-      py={theme.breakpoints.up('lg') ? '4' : '0'}
+      py={CustomBreakpoints.matchesPlusMdUp ? '4' : '0'}
       display={'flex'}
       flexDirection={'column'}
       alignItems={'center'}
@@ -55,6 +39,7 @@ export const TopPage = (props: Props): JSX.Element => {
         '& > :not(style) + :not(style)': { marginTop: '4px' },
         transition: 'background-color 0.5s ease',
       }}
+      minHeight={'100vh'}
       id={'top-page'}
     >
       <Typography
@@ -70,7 +55,7 @@ export const TopPage = (props: Props): JSX.Element => {
         kyon Engineering Laboratory
       </Typography>
       <Controller handleClick={props.handleClick} />
-      {matchesPlusMd ? (
+      {CustomBreakpoints.matchesPlusMdUp ? (
         <IconButton
           onClick={scrollAboutThisSite}
           sx={{

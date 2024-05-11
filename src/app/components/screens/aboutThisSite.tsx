@@ -1,11 +1,10 @@
 import { useColorAssets } from '@/hooks/view/useColorAssets';
-import { Box, Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { useCustomBreakpoints } from '@/hooks/view/useCustomBreakpoints';
+import { Box, Stack, Typography } from '@mui/material';
 
 export const AboutThisSite = (): JSX.Element => {
   const ColorAssets = useColorAssets();
-  const theme = useTheme();
-  const matchesPlusMd = useMediaQuery(theme.breakpoints.up('plusMd'));
-  const matchesSm = useMediaQuery(theme.breakpoints.up('sm'));
+  const CustomBreakPoints = useCustomBreakpoints();
 
   return (
     <Box
@@ -21,15 +20,15 @@ export const AboutThisSite = (): JSX.Element => {
         spacing={6}
       >
         <Typography
-          variant={useMediaQuery(theme.breakpoints.up('md')) ? 'h3' : 'h4'}
+          variant={CustomBreakPoints.matchesMdUp ? 'h3' : 'h4'}
           color={ColorAssets.textBlack}
           fontWeight={'Bold'}
         >
           About This Site
         </Typography>
-        {matchesPlusMd ? (
+        {CustomBreakPoints.matchesMdUp ? (
           <Typography
-            variant="body1"
+            fontSize={'16px'}
             align="center"
             style={{ lineHeight: '3.0' }}
             color={ColorAssets.textBlack}
@@ -45,12 +44,12 @@ export const AboutThisSite = (): JSX.Element => {
           </Typography>
         ) : (
           <Typography
-            variant="body2"
+            fontSize={'14px'}
             align="center"
             style={{ lineHeight: '3.0' }}
             color={ColorAssets.textBlack}
             id="about-this-site"
-            maxWidth={matchesSm ? '60%' : '80%'}
+            maxWidth={CustomBreakPoints.matchesSmUp ? '60%' : '80%'}
             sx={{
               textJustify: 'inter-ideograph',
             }}

@@ -1,4 +1,5 @@
 import { useColorAssets } from '@/hooks/view/useColorAssets';
+import { useCustomBreakpoints } from '@/hooks/view/useCustomBreakpoints';
 import { Box, Stack, Typography } from '@mui/material';
 import ContactForm from '../ui-kits/contactForm';
 
@@ -8,6 +9,7 @@ export const ContactMe = ({
   backgroundColor: string;
 }): JSX.Element => {
   const ColorAssets = useColorAssets();
+  const CustomBreakpoints = useCustomBreakpoints();
   return (
     <Box
       minHeight={'100vh'}
@@ -22,26 +24,39 @@ export const ContactMe = ({
         spacing={4}
       >
         <Typography
-          variant="h3"
+          variant={
+            CustomBreakpoints.matchesMdUp
+              ? 'h3'
+              : CustomBreakpoints.matchesSmDown
+              ? 'h5'
+              : 'h4'
+          }
           color={ColorAssets.textBlack}
           fontWeight={'Bold'}
         >
           Contact me
         </Typography>
-        <Typography
-          variant="body1"
-          align="center"
-          style={{ lineHeight: '3.0' }}
-          color={ColorAssets.textBlack}
-          //maxWidth={'620px'}
-          maxWidth={'100%'}
-          id="contact-me"
-          textAlign={'left'}
-        >
-          最後までご覧いただきありがとうございます。 <br />
-          このサイトを通じて、 少しでも私のことを知っていただければ幸いです。
-          もしあればコメントや質問等、なんでもお気軽にご連絡ください
-        </Typography>
+        <Box display="flex" justifyContent="center">
+          <Typography
+            fontSize={
+              CustomBreakpoints.matchesMdUp
+                ? '14px'
+                : CustomBreakpoints.matchesSmDown
+                ? '10px'
+                : '12px'
+            }
+            style={{ lineHeight: '3.0' }}
+            color={ColorAssets.textBlack}
+            maxWidth={'60%'}
+            id="contact-me"
+            textAlign={'left'}
+          >
+            最後までご覧いただきありがとうございます。 <br />
+            このサイトを通じて、 少しでも私のことを知っていただければ幸いです。
+            もしあればコメントや質問等、なんでもお気軽にご連絡ください
+          </Typography>
+        </Box>
+
         <ContactForm backgroundColor={backgroundColor} />
       </Stack>
     </Box>

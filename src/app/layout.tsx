@@ -3,8 +3,7 @@ import { ThemeProvider } from '@emotion/react';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import type { Metadata } from 'next';
 import '../app/styles/globals.css';
-import RecoilProvider from './recoilProvider';
-import { theme } from './ui/font';
+import { theme } from './ui/theme';
 
 const metadata: Metadata = {
   title: 'Create Next App',
@@ -20,9 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <AppRouterCacheProvider>
-          <RecoilProvider>
-            <ThemeProvider theme={theme}>{children}</ThemeProvider>
-          </RecoilProvider>
+          <ThemeProvider theme={theme}>{children}</ThemeProvider>
         </AppRouterCacheProvider>
       </body>
     </html>

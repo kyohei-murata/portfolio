@@ -14,7 +14,7 @@ body {
   background-size: 20px 20px; /* ラジアルグラデーションのサイズ */
   background-position: 0 0, 150px 150px;
   background-attachment: fixed;
-  height: 1300vh;
+
   justify-content: center;
   align-items: center;
 }

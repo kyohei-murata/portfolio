@@ -1,15 +1,14 @@
-import { theme } from '@/app/ui/font';
 import { useColorAssets } from '@/hooks/view/useColorAssets';
-import { Box, Link, Stack, Typography, useMediaQuery } from '@mui/material';
+import { useCustomBreakpoints } from '@/hooks/view/useCustomBreakpoints';
+import { Box, Link, Stack, Typography } from '@mui/material';
 import Image from 'next/image';
 
 export const AboutMe = (): JSX.Element => {
   const ColorAssets = useColorAssets();
-  const matchesPlusMd = useMediaQuery(theme.breakpoints.up('plusMd'));
-  const matchesMd = useMediaQuery(theme.breakpoints.up('md'));
+  const CustomBreakPoints = useCustomBreakpoints();
   return (
     <>
-      {matchesPlusMd ? (
+      {CustomBreakPoints.matchesMdUp ? (
         <Box
           minHeight={'100vh'}
           display={'flex'}
@@ -24,7 +23,7 @@ export const AboutMe = (): JSX.Element => {
             spacing={6}
           >
             <Typography
-              variant={useMediaQuery(theme.breakpoints.up('md')) ? 'h3' : 'h4'}
+              variant={CustomBreakPoints.matchesMdUp ? 'h3' : 'h4'}
               color={ColorAssets.textBlack}
               fontWeight={'Bold'}
             >
@@ -80,9 +79,7 @@ export const AboutMe = (): JSX.Element => {
         >
           <Stack alignItems={'center'} justifyContent={'center'} spacing={6}>
             <Typography
-              variant={
-                useMediaQuery(theme.breakpoints.down('xs')) ? 'h4' : 'h3'
-              }
+              variant={CustomBreakPoints.matchesMdUp ? 'h3' : 'h4'}
               color={ColorAssets.textBlack}
               fontWeight={'Bold'}
             >
@@ -103,11 +100,7 @@ export const AboutMe = (): JSX.Element => {
                 height={130}
               />
               <Typography
-                variant={
-                  useMediaQuery(theme.breakpoints.down('xs'))
-                    ? 'body2'
-                    : 'body1'
-                }
+                variant={CustomBreakPoints.matchesXsDown ? 'body2' : 'body1'}
                 align="left"
                 style={{ lineHeight: '2.5' }}
                 color={ColorAssets.textBlack}

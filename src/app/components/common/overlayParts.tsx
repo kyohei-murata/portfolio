@@ -12,7 +12,7 @@ export const OverlayParts = (props: Props): JSX.Element => {
       zIndex={'1000'}
       position="fixed"
       minWidth="100%"
-      minHeight="100vh"
+      minHeight="100%"
       left={'0'}
       top={'0'}
       bgcolor={'rgba(0, 0, 0, 0.5)'}

@@ -5,8 +5,6 @@ declare module '@mui/material/styles' {
   interface BreakpointOverrides {
     minusMd: true; // 新しいブレークポイントを追加
     plusMd: true;
-    minusLg: true;
-    plusLg: true;
   }
 }
 
@@ -26,13 +24,11 @@ export const theme = createTheme({
   breakpoints: {
     values: {
       xs: 401,
-      sm: 601,
+      sm: 601, //smart phone
       minusMd: 1023,
-      md: 1024,
+      md: 1024, //ipad pro
       plusMd: 1025,
-      minusLg: 1279,
-      lg: 1280,
-      plusLg: 1281,
+      lg: 1280, //laptop
       xl: 1920,
     },
   },

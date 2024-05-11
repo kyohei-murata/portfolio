@@ -40,6 +40,39 @@ export const PopUpMenuButton = ({
   };
 
   const ColorAssets = useColorAssets();
+  const topOffset = 10;
+  const scrollTopPage = () => {
+    const topPageY =
+      document.querySelector('#top-page')?.getBoundingClientRect().top ?? 0;
+    window.scrollTo({
+      top: window.pageYOffset + topPageY - window.innerHeight / 2 + topOffset,
+      behavior: 'smooth',
+    });
+  };
+  const scrollAboutMe = () => {
+    const topPageY =
+      document.querySelector('#about-me')?.getBoundingClientRect().top ?? 0;
+    window.scrollTo({
+      top: window.pageYOffset + topPageY - window.innerHeight / 2,
+      behavior: 'smooth',
+    });
+  };
+  const scrollProfile = () => {
+    const topPageY =
+      document.querySelector('#profile')?.getBoundingClientRect().top ?? 0;
+    window.scrollTo({
+      top: window.pageYOffset + topPageY - window.innerHeight / 2,
+      behavior: 'smooth',
+    });
+  };
+  const scrollContactMe = () => {
+    const topPageY =
+      document.querySelector('#contact-me')?.getBoundingClientRect().top ?? 0;
+    window.scrollTo({
+      top: window.pageYOffset + topPageY - window.innerHeight / 2 + 200,
+      behavior: 'smooth',
+    });
+  };
 
   return (
     <>
@@ -48,12 +81,12 @@ export const PopUpMenuButton = ({
         display={'flex'}
         position="fixed"
         bottom="8%"
-        right="5%"
+        right="10%"
         zIndex={'2000'}
       >
         <Box
-          width="70px"
-          height="70px"
+          width="60px"
+          height="60px"
           bgcolor={'none'}
           onMouseLeave={leaveAddIcon}
         >
@@ -84,10 +117,17 @@ export const PopUpMenuButton = ({
               position="absolute"
               left={positionList[0].left}
               top={positionList[0].top}
-              onClick={() => {}}
+              onClick={scrollContactMe}
             >
-              <Typography fontSize={'12px'} color={ColorAssets.textWhite}>
-                contact me
+              <Typography
+                fontSize={'12px'}
+                fontWeight={'Bold'}
+                color={ColorAssets.textWhite}
+                textAlign={'center'}
+              >
+                contact
+                <br />
+                me
               </Typography>
             </PopUpMenuButtonBase>
           </Box>
@@ -97,8 +137,13 @@ export const PopUpMenuButton = ({
               position="absolute"
               left={positionList[1].left}
               top={positionList[1].top}
+              onClick={scrollProfile}
             >
-              <Typography fontSize={'12px'} color={ColorAssets.textWhite}>
+              <Typography
+                fontSize={'12px'}
+                color={ColorAssets.textWhite}
+                fontWeight={'Bold'}
+              >
                 profile
               </Typography>
             </PopUpMenuButtonBase>
@@ -109,11 +154,13 @@ export const PopUpMenuButton = ({
               position="absolute"
               left={positionList[2].left}
               top={positionList[2].top}
-              onClick={() => {
-                leaveAddIcon();
-              }}
+              onClick={scrollAboutMe}
             >
-              <Typography fontSize={'12px'} color={ColorAssets.textWhite}>
+              <Typography
+                fontSize={'12px'}
+                color={ColorAssets.textWhite}
+                fontWeight={'Bold'}
+              >
                 About Me
               </Typography>
             </PopUpMenuButtonBase>
