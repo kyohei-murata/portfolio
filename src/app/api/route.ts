@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
   });
 
   const mailOptions: Mail.Options = {
-    from: name,
+    from: email,
     to: 'kyohei.murata10@gmail.com',
     subject: name,
     text: message,
