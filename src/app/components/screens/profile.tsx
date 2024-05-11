@@ -45,7 +45,7 @@ export const Profile = (): JSX.Element => {
             Profile
           </Typography>
           <Typography
-            fontSize={CustomBreakPoints.matchesMdUp ? '24px' : '16px'}
+            fontSize={CustomBreakPoints.matchesMdUp ? '20px' : '16px'}
             align="center"
             color={ColorAssets.textBlack}
             id={'profile'}

@@ -160,8 +160,11 @@ export const PopUpMenuButton = ({
                 fontSize={'12px'}
                 color={ColorAssets.textWhite}
                 fontWeight={'Bold'}
+                textAlign={'center'}
               >
-                About Me
+                About
+                <br />
+                Me
               </Typography>
             </PopUpMenuButtonBase>
           </Box>
