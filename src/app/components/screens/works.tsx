@@ -93,15 +93,15 @@ export const Works = (): JSX.Element => {
                 <CardMedia
                   component="img"
                   height="140"
-                  image="/ComingSoon.png"
-                  alt="comingsoon"
+                  image="/tabemiru.png"
+                  alt="tabemiru"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
-                    Coming Soon..
+                    tabemiru
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    今後の作品をお楽しみに！　　　　　　　　　　　
+                    摂取カロリーと栄養素を計算するアプリです。現在開発中。
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -180,8 +180,8 @@ export const Works = (): JSX.Element => {
                 <CardMedia
                   component="img"
                   height={CustomBreakpoints.matchesSmDown ? '70' : '100'}
-                  image="/ComingSoon.png"
-                  alt="comingsoon"
+                  image="/tabemiru.png"
+                  alt="tabemiru"
                 />
                 <CardContent>
                   <Typography
@@ -189,13 +189,13 @@ export const Works = (): JSX.Element => {
                     fontSize={CustomBreakpoints.matchesSmDown ? '16px' : '24px'}
                     component="div"
                   >
-                    Coming Soon..
+                    tabemiru
                   </Typography>
                   <Typography
                     fontSize={CustomBreakpoints.matchesSmDown ? '8px' : '16px'}
                     color="text.secondary"
                   >
-                    今後の作品をお楽しみに！
+                    摂取カロリーと栄養素を計算するアプリです。現在開発中。
                   </Typography>
                 </CardContent>
               </CardActionArea>
