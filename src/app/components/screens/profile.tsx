@@ -136,7 +136,7 @@ export const Profile = (): JSX.Element => {
             imageAlt="circle"
             size="large"
             title="マーケターとして再スタート"
-            body="スタートアップに拾っていただき、心機一転SNS運用を担当しマーケティングの知識を付ける。起業の厳しさや楽しさを目の当たりにし、自分の弱みと強みを知ることができた。"
+            body="スタートアップに拾っていただき、マーケティング、分析、iOSアプリ開発の知識を付ける。起業の厳しさや楽しさを目の当たりにし、自分の弱みと強みを知ることができた。"
             direction="right"
             imageRef={timelineDot_8Ref}
             typographyRef={typography_8Ref}
@@ -146,8 +146,18 @@ export const Profile = (): JSX.Element => {
             imageAlt="circle"
             size="large"
             title="復学、就活"
-            body="前から興味があったメンタルヘルスサービスでの起業を夢に、一度エンジニアとして働くことを決意する。そのために復学し、就活中"
+            body="すべての人がワクワクしながら生きられる世界を夢に、一度エンジニアとして働くことを決意する。そのために復学し、就活をする"
             direction="left"
+            imageRef={timelineDot_9Ref}
+            typographyRef={typography_9Ref}
+          />
+          <CustomizedTimeline
+            imageSrc="/start.webp"
+            imageAlt="circle"
+            size="large"
+            title="解散、再就活"
+            body="就活を中断し引き続き働くことを決意するも会社が解散に、再び就活中"
+            direction="right"
             imageRef={timelineDot_9Ref}
             typographyRef={typography_9Ref}
           />
@@ -252,6 +262,16 @@ export const Profile = (): JSX.Element => {
             size="large"
             title="復学、就活"
             body="前から興味があったメンタルヘルスサービスでの起業を夢に、一度エンジニアとして働くことを決意する。そのために復学し、就活中"
+            direction="right"
+            imageRef={timelineDot_9Ref}
+            typographyRef={typography_9Ref}
+          />
+          <CustomizedTimeline
+            imageSrc="/start.webp"
+            imageAlt="circle"
+            size="large"
+            title="解散、再就活"
+            body="就活を中断し引き続き働くことを決意するも会社が解散に、再び就活中"
             direction="right"
             imageRef={timelineDot_9Ref}
             typographyRef={typography_9Ref}

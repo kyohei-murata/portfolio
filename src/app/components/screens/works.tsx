@@ -69,6 +69,33 @@ export const Works = (): JSX.Element => {
               </CardActionArea>
             </Card>
 
+            <Card
+              sx={{ maxWidth: 300 }}
+              onClick={() => {
+                window.location.href = 'https://pico-web.web.app/'; // ここに遷移したいURLを指定します
+              }}
+            >
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  height="140"
+                  image="/PICO.png"
+                  alt="PICO"
+                  sx={{
+                    borderBottom: '2px solid #ccc', // 👈 ここで下線
+                  }}
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div">
+                    PICO
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    親子向けのAI会話ロボットアプリPiCOのプロトタイプです。(web版)
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+            </Card>
+
             <Card sx={{ maxWidth: 300 }} onClick={scrollTopPage}>
               <CardActionArea>
                 <CardMedia
